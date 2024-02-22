@@ -1,0 +1,64 @@
+<div class="filter">
+  <p>Try filtering the list with user name or email</p>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Email or Name" (input)="filterList()" name="search" [(ngModel)]="filterInput" >
+  </mat-form-field>
+</form>
+</div>
+
+<!-- Task 5: placing a spinner while fetching the data -->
+<ng-template #loader>
+  <div class="loader">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<div class="userlist" *ngIf="userList.length != 0;else loader">
+ <table mat-table [dataSource]="filteredList" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th  mat-header-cell *matHeaderCellDef> ID. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> User Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef> Phone No </th>
+    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="website">
+    <th mat-header-cell *matHeaderCellDef> Website </th>
+    <td mat-cell *matCellDef="let element"> {{element.website}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <tr class="tableHead" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr appHoverRow mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+<div class="nouserfound" *ngIf="noUserFound">
+  <p>User not found</p>
+  <img src="assets/notfound.png" alt="">
+</div>
+</div>
+
+

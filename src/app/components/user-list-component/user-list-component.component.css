@@ -1,0 +1,53 @@
+table {
+  width: 90%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.filter{
+  padding: 1rem;
+}
+
+.userlist{
+  padding: 1rem;
+}
+
+.hoverRow{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.tableHead{
+  background-color: grey;
+}
+
+.loader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.nouserfound{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: red;
+  font-weight: 500;
+}
+
+.nouserfound img{
+  width: 4rem;
+}

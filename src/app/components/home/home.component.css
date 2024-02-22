@@ -1,0 +1,19 @@
+.example-card {
+  max-width: 400px;
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.mat-mdc-card-header {
+  justify-content: center;
+  text-align: center;
+}
+
+button{
+  margin: auto;
+}
